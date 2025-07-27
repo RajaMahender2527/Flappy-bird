@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.game-container {
+    border: 3px solid var(--bs-border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+    background: #87CEEB;
+}
+
+#gameCanvas {
+    display: block;
+    background: transparent;
+}
+
+#gameUI {
+    pointer-events: none;
+    z-index: 10;
+}
+
+#gameUI button {
+    pointer-events: all;
+    transition: all 0.3s ease;
+}
+
+#gameUI button:hover {
+    transform: scale(1.05);
+}
+
+#scoreDisplay {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+}
+
+#scoreDisplay h3 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+#startScreen, #gameOverScreen {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--bs-border-color);
+}
+
+#instructions {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 5px 15px;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .game-container {
+        transform: scale(0.8);
+    }
+    
+    #startScreen, #gameOverScreen {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Game elements styling */
+.bird {
+    border-radius: 50%;
+}
+
+.pipe {
+    background: linear-gradient(to right, #228B22, #32CD32);
+}
+
+/* Animation classes */
+.bounce {
+    animation: bounce 0.3s ease-out;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
